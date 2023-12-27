@@ -65,12 +65,25 @@ function RootLayoutNav() {
             fontFamily: "mon-sb",
           },
           headerLeft: () => (
-            <TouchableOpacity onPress={() => router.back}>
+            <TouchableOpacity onPress={() => router.back()}>
               <Ionicons name="close-outline" size={28} />
             </TouchableOpacity>
           ),
         }}
       />
+      <Stack.Screen name="listing/[id]" options={{
+        headerTitle: ""
+      }}/>
+      <Stack.Screen name="(modals)/booking" options={{
+        presentation: "transparentModal",
+        headerLeft: () => (
+          <TouchableOpacity onPress={() => router.back()}>
+            <Ionicons name="close-outline" size={28} />
+          </TouchableOpacity>
+        ),
+        animation: "fade",
+        
+      }}/>
     </Stack>
   );
 }
