@@ -7,6 +7,7 @@ const Index = () => {
     <View>
       <Link href={"/(modals)/login"}>Login</Link>
       <Link href={"/(modals)/booking"}>Bookings</Link>
+      <Link href={"/listing/74639"}>Listing Details Page</Link>
     </View>
   )
 }
