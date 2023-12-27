@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import Colors from "@/constants/Colors";
@@ -6,6 +5,8 @@ import Colors from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+
 
 const Layout = () => {
   return (
@@ -16,7 +17,7 @@ const Layout = () => {
       }}
     >
       <Tabs.Screen
-        name="index" // name of the file 
+        name="index" // name of the file
         options={{
           tabBarLabel: "Explore", // name that will be displayed on the tab.
           tabBarIcon: ({ color, size }) => (
@@ -33,7 +34,7 @@ const Layout = () => {
           ),
         }}
       />
-       <Tabs.Screen
+      <Tabs.Screen
         name="trips"
         options={{
           tabBarLabel: "Trips",
@@ -47,7 +48,11 @@ const Layout = () => {
         options={{
           tabBarLabel: "Inbox",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="message-outline" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="message-outline"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
@@ -60,7 +65,6 @@ const Layout = () => {
           ),
         }}
       />
-
     </Tabs>
   );
 };
