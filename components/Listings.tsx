@@ -4,11 +4,14 @@ import { FlatList } from 'react-native-gesture-handler';
 import { Link } from 'expo-router';
 import { defaultStyles } from '@/constants/Styles';
 import { Ionicons } from '@expo/vector-icons';
+import  Animated, { FadeInLeft, FadeInRight, FadeOut, FadeOutLeft } from 'react-native-reanimated';
 
 type Props ={
   listings: any[];
   category: string
 }
+
+//to add animation to the list install reactnative reanimated.
 
 const Listings = ({listings: items, category}: Props) => {
   const [loading, setLoading] = useState(false);
@@ -28,7 +31,7 @@ const Listings = ({listings: items, category}: Props) => {
 const renderRow: ListRenderItem<any> = ({item}) => (
   <Link href={`/listing/${item.id}`} asChild>
     <TouchableOpacity>
-      <View style={styles.listing}>
+      <Animated.View style={styles.listing} entering={FadeInRight} exiting={FadeOutLeft}>
       <Image source={{uri: item.medium_url}} style={styles.image}/>
       <TouchableOpacity style={{position: "absolute", top: 30, right: 30}}>
         <Ionicons name='heart-outline' size={24} color={"#000"}/>
@@ -47,7 +50,7 @@ const renderRow: ListRenderItem<any> = ({item}) => (
         <Text style={{fontFamily: "mon-sb"}}>€{item.price}</Text>
         <Text  style={{fontFamily: 'mon'}}>night</Text>
       </View>
-      </View>
+      </Animated.View>
     </TouchableOpacity>
   </Link>
 )
