@@ -90,6 +90,7 @@ const ExploreHeader = ({onCategoryChanged}: Props) => {
             alignItems: "center",
             gap: 30,
             paddingHorizontal: 10,
+            
           }}
         >
           {categories.map((item, index) => (
